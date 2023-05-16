@@ -1,0 +1,30 @@
+{
+  "name": "spelling",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "serve": "webpack serve --config webpack.config.js",
+    "test": "karma start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.1",
+    "jasmine-core": "^4.6.0",
+    "karma": "^6.4.2",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-cli": "^2.0.0",
+    "karma-jasmine": "^5.1.0",
+    "karma-jasmine-html-reporter": "^2.0.0",
+    "karma-sourcemap-loader": "^0.3.8",
+    "karma-webpack": "^5.0.0",
+    "karma-nested-reporter": "^0.1.7",
+    "karma-nyan-reporter": "^0.2.5",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.15.0"
+  }
+}

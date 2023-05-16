@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* FORM */
+input,
+button[type='submit'] {
+  font-size: 1rem;
+}
+
+input {
+  display: block;
+  padding: 0.25rem 0.4rem;
+  width: 100%;
+  margin-block-start: 4px;
+
+  transition: 0.15s ease-in-out;
+  border-radius: 4px;
+  outline: none;
+}
+
+input:focus {
+  box-shadow: 0 0 0 4px #00000033;
+}
+
+.form-group {
+  margin-block: 8px;
+}
+
+.submit-btn-group {
+  margin-block: 16px 10px;
+}
+
+/* FORM */
+.result-container #result {
+  font-size: 2rem;
+  font-weight: bold;
+}
