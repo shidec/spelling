@@ -73,7 +73,7 @@ const Spelling = {
         if(text.length > 1) result = result.replaceAll("nol", "");
         result = result.replace("satu puluh", "sepuluh");
         result = result.replace("satu ratus", "seratus");
-		result = result.replace("satu belas", "sebelas");
+        result = result.replace("satu belas", "sebelas");
 
         return result;
     }
