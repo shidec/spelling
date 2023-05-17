@@ -12,6 +12,7 @@ const Spelling = {
         let result = "";
         const numbers = [];
 
+        //--membagi angka menjadi kelompok 3 digit, misalnya angka "12345678"
         for(let i = text.length; i > 0; i -= 3){
             if((i - 3) > 0){
                 numbers.unshift(text.substring(i - 3, i));
@@ -19,12 +20,21 @@ const Spelling = {
                 numbers.unshift(text.substring(0, i));
             }
         }
+        
+        //--hasilnya numbers akan berisi ["12", "345", "678"]
 
         for(let i = 0; i < numbers.length; i++){
             let level = numbers.length - i - 2;
             
+            //--proses numbers dengan method spellPart, dan tambahkan derajatnya (mis: juta, ribu) sesuai level
             result += Spelling.spellPart(numbers[i]) + (level >= 0 ? ' ' + degrees[level]: '');
         }
+
+        /**
+         * khusus untuk yang berawalan "satu ribu" diubah menjadi "seribu"
+         * tapi "satu ribu" yang letaknya ditengah kalimat tidak diubah
+         * misalnya: 21345 => "dua puluh satu ribu tiga ratus empat puluh lima"
+        */
         result = result.trim().replace(/^satu ribu/, "seribu");
 
         console.log(result);
