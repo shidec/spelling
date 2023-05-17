@@ -13,7 +13,16 @@ describe('Spelling', () => {
       Spelling.spell(number);
     }).toThrowError(Error);
   });
- 
+
+  /* cek input */
+  it('Harus gagal kalo input input lebih dari 15 digit (trilyun)', function () {
+    const number = 1234567890123456;
+
+    expect(() => {
+      Spelling.spell(number);
+    }).toThrowError(Error);
+  });
+
   /* cek tipe output */
   it('Harus menghasilkan string', () => {
     const resultType = typeof Spelling.spell(1);
@@ -70,17 +79,17 @@ describe('Spelling', () => {
     const result = Spelling.spell(10);
     expect(result).toBe('sepuluh');
   });
-  
+
   it('Jika input 20 maka hasilnya "dua puluh"', () => {
     const result = Spelling.spell(20);
     expect(result).toBe('dua puluh');
   });
-  
+
   it('Jika input 21 maka hasilnya "dua puluh satu"', () => {
     const result = Spelling.spell(21);
     expect(result).toBe('dua puluh satu');
   });
-  
+
   it('Jika input 11 maka hasilnya "sebelas"', () => {
     const result = Spelling.spell(11);
     expect(result).toBe('sebelas');
@@ -90,35 +99,55 @@ describe('Spelling', () => {
     const result = Spelling.spell(12);
     expect(result).toBe('dua belas');
   });
-  
+
   it('Jika input 100 maka hasilnya "seratus"', () => {
     const result = Spelling.spell(100);
     expect(result).toBe('seratus');
   });
-  
+
   it('Jika input 200 maka hasilnya "dua ratus"', () => {
     const result = Spelling.spell(200);
     expect(result).toBe('dua ratus');
   });
-  
+
   it('Jika input 110 maka hasilnya "seratus sepuluh"', () => {
     const result = Spelling.spell(110);
     expect(result).toBe('seratus sepuluh');
   });
-  
+
   it('Jika input 120 maka hasilnya "seratus dua puluh"', () => {
     const result = Spelling.spell(120);
     expect(result).toBe('seratus dua puluh');
   });
-  
+
   it('Jika input 111 maka hasilnya "seratus sebelas"', () => {
     const result = Spelling.spell(111);
     expect(result).toBe('seratus sebelas');
   });
-  
+
   it('Jika input 112 maka hasilnya "seratus dua belas"', () => {
     const result = Spelling.spell(112);
     expect(result).toBe('seratus dua belas');
+  });
+  
+  it('Jika input 1111 maka hasilnya "seribu seratus sebelas"', () => {
+    const result = Spelling.spell(1111);
+    expect(result).toBe('seribu seratus sebelas');
+  });
+
+  it('Jika input 1112 maka hasilnya "seribu seratus dua belas"', () => {
+    const result = Spelling.spell(1112);
+    expect(result).toBe('seribu seratus dua belas');
+  });
+  
+  it('Jika input 1111111 maka hasilnya "satu juta seratus sebelas ribu seratus sebelas"', () => {
+    const result = Spelling.spell(1111111);
+    expect(result).toBe('satu juta seratus sebelas ribu seratus sebelas');
+  });
+
+  it('Jika input 1111112 maka hasilnya "satu juta seratus sebelas ribu seratus dua belas"', () => {
+    const result = Spelling.spell(1111112);
+    expect(result).toBe('satu juta seratus sebelas ribu seratus dua belas');
   });
 
 });
